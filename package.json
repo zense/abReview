@@ -1,0 +1,12 @@
+{
+  "name": "AbReview",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.2.0",
+    "ckeditor": "^4.8.0",
+    "coffeescript": "1.12.7"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.9.7"
+  }
+}

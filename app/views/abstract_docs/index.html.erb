@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to new_abstract_doc_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Abstract
+  <% end %>
+  <h1>Listing Abstracts</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Title</th>
+            <th>Attachment</th>
+            <th>Category</th>
+            <th>User</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @abstract_dos) do |abstract_doc| %>
+            <td><%= abstract_doc.title %></td>
+            <td><%= abstract_doc.attachment %></td>
+            <td><%= abstract_doc.category %></td>
+            <td><%= abstract_doc.user %></td>
+            <td><%= link_to 'Show', abstract_doc %></td>
+        <td><%= link_to 'Edit', edit_abstract_doc_path(abstract_doc) %></td>
+        <td><%= link_to 'Destroy', abstract_doc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
