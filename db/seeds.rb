@@ -18,4 +18,5 @@ Category.create([
 
 Page.create({title: "Home", slug: "home", content:""})
 
-User.create({name: "Administrator", email:"admin@iiitb.org", password:"thanks123", password_confirmation:"thanks123", organisation:"IIIT-B"})
+user = User.create({name: "Administrator", email:"admin@iiitb.org", password:"thanks123", password_confirmation:"thanks123", organisation:"IIIT-B"})
+user.add_role :admin
