@@ -14,4 +14,8 @@ class AbstractDoc < ApplicationRecord
   def status_enum
     AbstractDoc.statuses.for_select
   end
+
+  after_save do
+    NotificationsMailer.send_abstract(self).deliver_now if self.submitted?
+  end
 end

@@ -1,0 +1,6 @@
+ Dear Admin,
+
+A new Abstract titled <%= @abstract.title %> has been submitted.
+Please add reviewers to it in the dashboard.
+
+Follow the link @ <%= link_to "Here", root_url+"admin/abstract_doc/"+@abstract.id.to_s+"/edit" %> .
