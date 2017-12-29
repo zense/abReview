@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :reviews
   resources :categories
   resources :abstract_docs
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
 
   get "review" => "pages#review"
   get ":slug" => "pages#show", :as => 'page'

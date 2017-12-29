@@ -25,7 +25,7 @@
     <tbody>
       <%= content_tag_for(:tr, @abstract_docs) do |abstract_doc| %>
             <td><%= abstract_doc.title %></td>
-            <td><%= link_to abstract_doc.attachment_url %></td>
+            <td><%= link_to abstract_doc.attachment_url, abstract_doc.attachment_url %></td>
             <td><%= link_to abstract_doc.category.name %></td>
             <td><%= abstract_doc.user.name %></td>
             <td><%= link_to 'Show', abstract_doc %></td>

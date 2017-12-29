@@ -15,7 +15,7 @@
   <dd><%= @abstract_doc.title %></dd>
 
   <dt>Attachment:</dt>
-  <dd><%= @abstract_doc.attachment_url %></dd>
+  <dd><%= link_to @abstract_doc.attachment_url, @abstract_doc.attachment_url %></dd>
 
   <dt>Category:</dt>
   <dd><%= @abstract_doc.category.name %></dd>
