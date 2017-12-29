@@ -15,3 +15,7 @@ Category.create([
   {name: 'Networking, Communication & Signal Processing'},
   {name: 'Software Engineering'},
 ])
+
+Page.create({title: "Home", slug: "home", content:""})
+
+User.create({name: "Administrator", email:"admin@iiitb.org", password:"thanks123", password_confirmation:"thanks123", organisation:"IIIT-B"})

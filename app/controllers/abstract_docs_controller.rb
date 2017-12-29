@@ -81,6 +81,6 @@ class AbstractDocsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def abstract_doc_params
-      params.require(:abstract_doc).permit(:title, :attachment, :category_id)
+      params.require(:abstract_doc).permit(:title, :attachment, :category_id, :status)
     end
 end
