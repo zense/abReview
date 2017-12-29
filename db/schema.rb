@@ -10,43 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221233344) do
+ActiveRecord::Schema.define(version: 20171229043707) do
 
   create_table "abstract_docs", force: :cascade do |t|
-    t.string "title"
-    t.string "attachment"
-    t.integer "category_id"
-    t.integer "user_id"
+    t.string "title", null: false
+    t.string "attachment", null: false
+    t.integer "category_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0, null: false
     t.index ["category_id"], name: "index_abstract_docs_on_category_id"
     t.index ["user_id"], name: "index_abstract_docs_on_user_id"
   end
 
-  create_table "casein_admin_users", force: :cascade do |t|
-    t.string "login", null: false
-    t.string "name"
-    t.string "email"
-    t.integer "access_level", default: 0, null: false
-    t.string "crypted_password", null: false
-    t.string "password_salt", null: false
-    t.string "persistence_token"
-    t.string "single_access_token"
-    t.string "perishable_token"
-    t.integer "login_count", default: 0, null: false
-    t.integer "failed_login_count", default: 0, null: false
-    t.datetime "last_request_at"
-    t.datetime "current_login_at"
-    t.datetime "last_login_at"
-    t.string "current_login_ip"
-    t.string "last_login_ip"
-    t.string "time_zone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,31 +43,32 @@ ActiveRecord::Schema.define(version: 20171221233344) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.string "slug"
+    t.string "title", null: false
+    t.text "content", default: "", null: false
+    t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "abstract_doc_id"
-    t.integer "originality"
-    t.integer "expand"
-    t.integer "impact"
-    t.integer "methods"
-    t.integer "clarity"
+    t.integer "user_id", null: false
+    t.integer "abstract_doc_id", null: false
+    t.integer "originality", limit: 1
+    t.integer "expand", limit: 1
+    t.integer "impact", limit: 1
+    t.integer "methods", limit: 1
+    t.integer "clarity", limit: 1
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0, null: false
     t.index ["abstract_doc_id"], name: "index_reviews_on_abstract_doc_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "organisation"
+    t.string "name", null: false
+    t.string "organisation", null: false
     t.string "designation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,10 +1,12 @@
 class AbstractDocsController < ApplicationController
   before_action :set_abstract_doc, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_viewer, only: [:show]
 
+  before_action :authenticate_editor, only: [:edit, :update, :destroy]
   # GET /abstract_docs
   # GET /abstract_docs.json
   def index
-    @abstract_docs = AbstractDoc.all
+    @abstract_docs = AbstractDoc.where(user_id: current_user.id)
   end
 
   # GET /abstract_docs/1
@@ -62,6 +64,16 @@ class AbstractDocsController < ApplicationController
   end
 
   private
+
+    def authenticate_viewer
+      unless (@abstract_doc.reviewers + [@abstract_doc.user]).include?(current_user)
+        redirect_to root_url
+      end
+    end
+
+    def authenticate_editor
+      redirect_to root_url unless @abstract_doc.user == current_user
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_abstract_doc
       @abstract_doc = AbstractDoc.find(params[:id])

@@ -3,10 +3,10 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -21,7 +21,7 @@ RailsAdmin.config do |config|
 
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
-  # config.show_gravatar = true
+  config.show_gravatar = true
 
   config.actions do
     dashboard                     # mandatory
@@ -45,8 +45,22 @@ RailsAdmin.config do |config|
     field :content, :ck_editor
   end
 
+  config.model Review do
+    include_all_fields # all other default fields will be added after, conveniently
+    field :comments, :ck_editor
+    field :status, :enum do
+      enum_method do
+        :statuses
+      end
+    end
+  end
   config.model AbstractDoc do
     include_all_fields # all other default fields will be added after, conveniently
+    field :status, :enum do
+      enum_method do
+        :statuses
+      end
+    end
     field :attachment, :carrierwave
   end
 end
