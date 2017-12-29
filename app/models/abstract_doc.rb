@@ -10,5 +10,8 @@ class AbstractDoc < ApplicationRecord
   statuses :draft, :submitted, :archived, :accepted
 
   mount_uploader :attachment, AttachmentUploader
-  # don't forget those if you use :attr_accessible (delete method and form caching method are provided by Carrierwave and used by RailsAdmin)
+
+  def status_enum
+    AbstractDoc.statuses.for_select
+  end
 end

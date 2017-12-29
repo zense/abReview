@@ -6,4 +6,7 @@ class Review < ApplicationRecord
 
   statuses :draft, :submitted, :archived
 
+  def status_enum
+    Review.statuses.for_select
+  end
 end
