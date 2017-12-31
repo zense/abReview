@@ -64,7 +64,7 @@ class ReviewsController < ApplicationController
 
   private
     def authenticate_editor
-      redirect_to root_url unless @abstract_doc.user == current_user
+      redirect_to root_url unless @review.user == current_user
     end
 
     # Use callbacks to share common setup or constraints between actions.
