@@ -8,7 +8,7 @@ services:
     dns: "8.8.8.8"
     volumes:
       - ".:/app"
-    # env_file: .env
+    env_file: .env
     links:
       - db:db
       # In production instead add external_links for db
@@ -19,3 +19,14 @@ services:
     image: postgres:latest
     environment:
       - POSTGRES_PASSWORD=thanks123
+  proxy:
+    image: jwilder/nginx-proxy
+    restart: always
+    depends_on:
+      - web
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    ports:
+      - "80:80"
+    container_name: proxy
+ 
