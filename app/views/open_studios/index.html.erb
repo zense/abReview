@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to new_open_studio_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Open studio
+  <% end %>
+  <h1>Listing open_studios</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Name</th>
+            <th>Affiliation</th>
+            <th>Interested in</th>
+            <th>Email</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @open_studios) do |open_studio| %>
+            <td><%= open_studio.name %></td>
+            <td><%= open_studio.affiliation %></td>
+            <td><%= open_studio.interested_in %></td>
+            <td><%= open_studio.email %></td>
+            <td><%= link_to 'Show', open_studio %></td>
+        <td><%= link_to 'Edit', edit_open_studio_path(open_studio) %></td>
+        <td><%= link_to 'Destroy', open_studio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

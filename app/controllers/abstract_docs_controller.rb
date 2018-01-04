@@ -55,13 +55,13 @@ class AbstractDocsController < ApplicationController
 
   # DELETE /abstract_docs/1
   # DELETE /abstract_docs/1.json
-  def destroy
-    @abstract_doc.destroy
-    respond_to do |format|
-      format.html { redirect_to abstract_docs_url, notice: 'Abstract doc was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @abstract_doc.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to abstract_docs_url, notice: 'Abstract doc was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
 

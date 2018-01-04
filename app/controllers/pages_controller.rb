@@ -5,9 +5,11 @@ class PagesController < ApplicationController
     render :inline => @page.content.html_safe, :layout => true
   end
 
-  def review
-    @abstract_docs = current_user.abstract_reviews
-    @title = "Pending Abstracts"
-    render "abstract_docs/index"
+  def abstract
+    if current_user.abstract_docs.length > 0
+      redirect_to current_user.abstract_docs.first
+    else
+      redirect_to new_abstract_doc_url
+    end
   end
 end

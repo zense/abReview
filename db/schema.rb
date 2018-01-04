@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171229095217) do
+ActiveRecord::Schema.define(version: 20180104082013) do
 
   create_table "abstract_docs", force: :cascade do |t|
     t.string   "title",       :null=>false
@@ -37,6 +37,24 @@ ActiveRecord::Schema.define(version: 20171229095217) do
     t.integer  "height"
     t.datetime "created_at",        :null=>false
     t.datetime "updated_at",        :null=>false
+  end
+
+  create_table "open_houses", force: :cascade do |t|
+    t.string   "name"
+    t.string   "institute"
+    t.string   "branch_of_study"
+    t.string   "email"
+    t.datetime "created_at",      :null=>false
+    t.datetime "updated_at",      :null=>false
+  end
+
+  create_table "open_studios", force: :cascade do |t|
+    t.string   "name",          :null=>false
+    t.string   "affiliation",   :null=>false
+    t.string   "interested_in", :null=>false
+    t.string   "email",         :null=>false
+    t.datetime "created_at",    :null=>false
+    t.datetime "updated_at",    :null=>false
   end
 
   create_table "pages", force: :cascade do |t|

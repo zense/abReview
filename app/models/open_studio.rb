@@ -1,0 +1,2 @@
+class OpenStudio < ApplicationRecord
+end
