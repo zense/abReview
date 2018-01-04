@@ -20,7 +20,7 @@
 
     <tbody>
       <%= content_tag_for(:tr, @reviews) do |review| %>
-            <td><%= link_to review.abstract_doc.title, review.abstract_doc %></td>
+            <td><%= link_to review.abstract_doc.title, edit_review_path(review) %></td>
             <td><%= review.originality %></td>
             <td><%= review.expand %></td>
             <td><%= review.impact %></td>
