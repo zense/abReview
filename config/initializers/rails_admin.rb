@@ -51,6 +51,7 @@ RailsAdmin.config do |config|
   config.model Review do
     include_all_fields # all other default fields will be added after, conveniently
     field :comments, :ck_editor
+    field :attachment, :carrierwave
     field :status, :enum
   end
   config.model AbstractDoc do

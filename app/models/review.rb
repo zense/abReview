@@ -6,6 +6,8 @@ class Review < ApplicationRecord
 
   statuses :draft, :submitted, :archived
 
+  mount_uploader :attachment, AttachmentUploader
+
   def status_enum
     Review.statuses.for_select
   end

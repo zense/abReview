@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104082013) do
+ActiveRecord::Schema.define(version: 20180104220329) do
 
   create_table "abstract_docs", force: :cascade do |t|
     t.string   "title",       :null=>false
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20180104082013) do
     t.datetime "created_at",      :null=>false
     t.datetime "updated_at",      :null=>false
     t.integer  "status",          :default=>0, :null=>false
+    t.string   "attachment"
   end
 
   create_table "roles", force: :cascade do |t|
