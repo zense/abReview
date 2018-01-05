@@ -92,7 +92,7 @@ Rails.application.configure do
     :from                 => "noreply@rise.iiitb.ac.in",
     :user_name            => ENV["SMTP_USERNAME"],
     :password             => ENV["SMTP_PASSWORD"],
-    :authentication       => :plain,
+    :authentication       => :login,
     :enable_starttls_auto => true,
   }
 

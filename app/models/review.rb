@@ -13,6 +13,7 @@ class Review < ApplicationRecord
   end
 
   after_save do
+    NotificationsMailer.review_ack(self).deliver_now if self.submitted?
     flag = false
     self.abstract_doc.reviews.each do |review|
       flag = true unless review.submitted?

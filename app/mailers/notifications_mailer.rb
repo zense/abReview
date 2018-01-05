@@ -20,4 +20,24 @@ class NotificationsMailer < ApplicationMailer
       mail(to: user.email, subject: 'New Abstract submitted: '+@abstract.title)
     end
   end
+
+  def abstract_ack(abstract)
+    @abstract = abstract
+    mail(to: user.email, subject: 'Thank You for submitting your abstract: '+@abstract.title)
+  end
+
+  def review_ack(review)
+    @review = review
+    mail(to: user.email, subject: 'Thank You for submitting your review for the abstract titled: '+@review.abstract.title)
+  end
+
+  def open_house_ack(entry)
+    @entry = entry
+    mail(from: 'rise_oh@iiitb.ac.in', to: entry.email, subject: 'Thank You for registering for RISE 2018 Open House')
+  end
+
+  def open_studio_ack(entry)
+    @entry = entry
+    mail(from: 'rise_os@iiitb.ac.in', to: entry.email, subject: 'Thank You for registering for RISE 2018 Open Studio')
+  end
 end
