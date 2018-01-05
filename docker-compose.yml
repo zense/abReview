@@ -9,6 +9,7 @@ services:
     volumes:
       - ".:/app"
     env_file: .env
+    restart: always
     links:
       - db:db
       # In production instead add external_links for db
@@ -29,4 +30,3 @@ services:
     ports:
       - "80:80"
     container_name: proxy
- 
