@@ -23,12 +23,12 @@ class NotificationsMailer < ApplicationMailer
 
   def abstract_ack(abstract)
     @abstract = abstract
-    mail(to: user.email, subject: 'Thank You for submitting your abstract: '+@abstract.title)
+    mail(to: @abstract.user.email, subject: 'Thank You for submitting your abstract: '+@abstract.title)
   end
 
   def review_ack(review)
     @review = review
-    mail(to: user.email, subject: 'Thank You for submitting your review for the abstract titled: '+@review.abstract.title)
+    mail(to: @review.user.email, subject: 'Thank You for submitting your review for the abstract titled: '+@review.abstract_doc.title)
   end
 
   def open_house_ack(entry)

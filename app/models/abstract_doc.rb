@@ -16,7 +16,7 @@ class AbstractDoc < ApplicationRecord
   end
 
   after_save do
-    NotificationsMailer.abstact_ack(self).deliver_now if self.submitted?
+    NotificationsMailer.abstract_ack(self).deliver_now if self.submitted?
     NotificationsMailer.send_abstract(self).deliver_now if self.submitted?
   end
 end
