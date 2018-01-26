@@ -1,5 +1,5 @@
 class NotificationsMailer < ApplicationMailer
-  default from: "rise@iiitb.ac.in"
+  default from: "rise_phd@iiitb.ac.in"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
