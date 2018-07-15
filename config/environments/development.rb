@@ -53,8 +53,8 @@ Rails.application.configure do
     :port                 => 587,
     :domain               => 'iiitb.ac.in',
     :from                 => "noreply@rise.iiitb.ac.in",
-    :user_name            => 'rise_phd@iiitb.ac.in',
-    :password             => 'th@nks123',
+    :user_name            => '',
+    :password             => '',
     :authentication       => :login,
     :enable_starttls_auto => true,
   }
