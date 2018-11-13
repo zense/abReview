@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 20180104220329) do
   end
 
   create_table "open_houses", force: :cascade do |t|
-    t.string   "name",            :null=>false
-    t.string   "institute",       :null=>false
-    t.string   "branch_of_study", :null=>false
-    t.string   "email",           :null=>false
+    t.string   "name"
+    t.string   "institute"
+    t.string   "branch_of_study"
+    t.string   "email"
     t.datetime "created_at",      :null=>false
     t.datetime "updated_at",      :null=>false
   end
