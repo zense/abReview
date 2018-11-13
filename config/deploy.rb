@@ -1,7 +1,7 @@
 # Change these
 server '172.16.201.13', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:zense/abReview.git'
+set :repo_url,        'git@github.com:zense/abReview.git'
 set :application,     'Rise'
 set :user,            'rise'
 set :puma_threads,    [4, 16]
