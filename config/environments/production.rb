@@ -81,7 +81,7 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  config.action_mailer.default_url_options = { :host => "http://rise.iiitb.ac.in" }
+  config.action_mailer.default_url_options = { :host => ENV["VIRTUAL_HOST"] }
 
   config.action_mailer.delivery_method = :smtp
 
@@ -89,7 +89,7 @@ Rails.application.configure do
     :address              => ENV["SMTP_ADDRESS"],
     :port                 => 587,
     :domain               => 'iiitb.ac.in',
-    :from                 => "noreply@rise.iiitb.ac.in",
+    :from                 => ENV["SMTP_EMAIL"],
     :user_name            => ENV["SMTP_USERNAME"],
     :password             => ENV["SMTP_PASSWORD"],
     :authentication       => :login,

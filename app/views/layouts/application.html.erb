@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title><%= yield(:title) + " RISE 2018" %></title>
+  <title><%= yield(:title) + " | " + Site.meta(:name) %></title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -27,7 +27,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "RISE 2018", "/", class: "navbar-brand" %>
+        <%= link_to Site.meta(:name), "/", class: "navbar-brand" %>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -49,10 +49,10 @@
   <div class="jumbotron jumbotron-fluid">
   <div class="container-fluid" style="align-content:center">
     <div class="col-md-2 col-md-offset-2">
-      <img class="img-fluid mb-3 mb-md-0" src="/rise2018.png" alt="" height="200">
+      <img class="img-fluid mb-3 mb-md-0" src="/rise.png" alt="" height="200">
     </div>
     <div class="col-md-4" style="align-content:center">
-      <h1 class="display-3" style="vertical-align: middle;text-align: center;padding: 30px 0px;">RISE 2018 @ IIIT-B</h1>
+      <h1 class="display-3" style="vertical-align: middle;text-align: center;padding: 30px 0px;"><%= Site.meta(:name) %></h1>
     </div>
     <div class="col-md-2">
       <img class="img-fluid mb-3 mb-md-0" src="/iiitb.png" alt="" height="200" style="float: right;">

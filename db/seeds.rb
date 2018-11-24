@@ -20,3 +20,5 @@ Page.create({title: "Home", slug: "home", content:""})
 
 user = User.create({name: "Administrator", email:"admin@iiitb.org", password:"thanks123", password_confirmation:"thanks123", organisation:"IIIT-B"})
 user.add_role :admin
+
+Site.create(meta: :name, value: "Name Of Website")

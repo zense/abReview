@@ -33,11 +33,11 @@ class NotificationsMailer < ApplicationMailer
 
   def open_house_ack(entry)
     @entry = entry
-    mail(from: 'rise_oh@iiitb.ac.in', to: entry.email, subject: 'Thank You for registering for RISE 2018 Open House')
+    mail(from: 'rise_oh@iiitb.ac.in', to: entry.email, subject: 'Thank You for registering for <%= Site.meta(:name) %> Open House')
   end
 
   def open_studio_ack(entry)
     @entry = entry
-    mail(from: 'rise_os@iiitb.ac.in', to: entry.email, subject: 'Thank You for registering for RISE 2018 Open Studio')
+    mail(from: 'rise_os@iiitb.ac.in', to: entry.email, subject: 'Thank You for registering for <%= Site.meta(:name) %> Open Studio')
   end
 end
