@@ -1,5 +1,5 @@
 class NotificationsMailer < ApplicationMailer
-  default from: "rise_phd@iiitb.ac.in"
+  default from: Site.meta(:reply_email)
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -33,11 +33,11 @@ class NotificationsMailer < ApplicationMailer
 
   def open_house_ack(entry)
     @entry = entry
-    mail(from: Site.meta(:reply_email), to: entry.email, subject: 'Thank You for registering for <%= Site.meta(:name) %> Open House')
+    mail(from: Site.meta(:reply_email), to: entry.email, subject: 'Thank You for registering for ' + Site.meta(:name) + ' Open House')
   end
 
   def open_studio_ack(entry)
     @entry = entry
-    mail(from: Site.meta(:reply_email), to: entry.email, subject: 'Thank You for registering for <%= Site.meta(:name) %> Open Studio')
+    mail(from: Site.meta(:reply_email), to: entry.email, subject: 'Thank You for registering for ' + Site.meta(:name) + ' Open Studio')
   end
 end
