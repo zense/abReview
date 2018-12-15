@@ -22,3 +22,5 @@ user = User.create({name: "Administrator", email:"admin@iiitb.org", password:"th
 user.add_role :admin
 
 Site.create(meta: :name, value: "Name Of Website")
+Site.create(meta: :reply_email, value: "noreply@iiitb.org")
+
